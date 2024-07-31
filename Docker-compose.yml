@@ -1,0 +1,21 @@
+name: myapp
+
+services:
+  client:
+    image: alpine
+    command: sleep 1000
+    networks:
+      - client_server_nw
+
+  server:
+    image: alpine
+    command: sleep 1000
+    networks:
+      - client_server_nw
+      - server_db_nw
+
+  db:
+    image: alpine
+    command: sleep 1000
+    networks:
+      - server_db_nw
