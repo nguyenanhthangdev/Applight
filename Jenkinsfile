@@ -6,7 +6,7 @@ pipeline {
                 git credentialsId: 'github', url: 'https://github.com/nguyenanhthangdev/Applight.git'
             }
         }
-        state('Push Docker Hub') {
+        stage('Push Docker Hub') {
             steps {
                 // This step should not normally be used in your script. Consult the inline help for details.
                 withDockerRegistry(credentialsId: 'creds-dockerhub', url: '') {
